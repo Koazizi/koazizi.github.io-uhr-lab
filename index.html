@@ -5,7 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Azizi Urban Hydrosystems & Resilience Lab | UHR Lab</title>
-  <meta name="description" content="The Azizi Urban Hydrosystems & Resilience Lab at Tennessee State University studies urban water, environmental, infrastructure, and community systems for climate resilience and sustainable decision-making." />
+
+  <meta
+    name="description"
+    content="The Azizi Urban Hydrosystems & Resilience Lab at Tennessee State University studies urban water, environmental, infrastructure, and community systems for climate resilience and sustainable decision-making."
+  />
 
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -13,92 +17,177 @@
 <body>
 
 <header class="site-header">
-  <div class="container nav-container">
-    <a class="logo" href="index.html">
-      <span>UHR</span> Lab
+  <div class="container nav-wrap">
+
+    <a class="brand" href="#home" aria-label="UHR Lab Home">
+      <span class="brand-mark">UHR</span>
+      <span class="brand-text">Lab</span>
     </a>
 
-    <nav class="nav-links">
-      <a href="index.html" class="active">Home</a>
-      <a href="research.html">Research</a>
-      <a href="projects.html">Projects</a>
-      <a href="people.html">People</a>
-      <a href="publications.html">Publications</a>
-      <a href="tools-data.html">Tools & Data</a>
-      <a href="join.html">Join Us</a>
-      <a href="contact.html">Contact</a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="#home" class="active">Home</a>
+      <a href="#research">Research</a>
+      <a href="#projects">Projects</a>
+      <a href="#people">People</a>
+      <a href="#publications">Publications</a>
+      <a href="#tools">Tools & Data</a>
+      <a href="#join">Join Us</a>
+      <a href="#contact">Contact</a>
     </nav>
+
   </div>
 </header>
 
 <main>
 
-  <section class="hero">
+  <section id="home" class="hero page-section">
     <div class="container hero-grid">
 
       <div class="hero-content">
         <p class="eyebrow">Azizi Urban Hydrosystems & Resilience Lab</p>
 
         <h1>
-          Advancing resilient urban water, environmental, infrastructure, and community systems.
+          Advancing resilient urban water, environmental, infrastructure,
+          and community systems.
         </h1>
 
         <p class="hero-text">
           The UHR Lab studies how urban hydrosystems interact with climate risk,
-          infrastructure systems, environmental change, community knowledge, and
-          decision-making to support more resilient, equitable, and sustainable cities.
+          infrastructure, environmental change, community knowledge, and decision-making
+          to support more resilient, equitable, and sustainable cities.
         </p>
 
-        <div class="button-group">
-          <a class="button primary" href="research.html">Explore Research</a>
-          <a class="button secondary" href="join.html">Join the Lab</a>
+        <div class="button-row">
+          <a class="button primary" href="#research">Explore Research</a>
+          <a class="button secondary" href="#join">Join the Lab</a>
+        </div>
+
+        <div class="hero-tags" aria-label="Research methods">
+          <span>Hydrology</span>
+          <span>GIS</span>
+          <span>Flood Risk</span>
+          <span>ABM</span>
+          <span>Governance</span>
+          <span>Decision Support</span>
         </div>
       </div>
 
-      <div class="hero-card">
-        <p class="card-label">Research focus</p>
-        <h2>Coupled urban water systems</h2>
-        <p>
-          We connect hydrologic modeling, geospatial analysis, network science,
-          agent-based modeling, and community-engaged research to understand
-          climate risk and adaptation in cities.
-        </p>
+      <div class="visual-panel" aria-label="Urban hydrosystems visual diagram">
+        <div class="orb orb-one"></div>
+        <div class="orb orb-two"></div>
+
+        <div class="diagram-card main-card">
+          <span class="diagram-label">UHR Lab Framework</span>
+          <h2>Coupled Urban Hydrosystems</h2>
+          <p>
+            Linking water, climate, infrastructure, environment, communities,
+            and decisions across urban systems.
+          </p>
+        </div>
+
+        <div class="mini-card water">
+          <span>Water</span>
+          <strong>Flooding & hydrology</strong>
+        </div>
+
+        <div class="mini-card community">
+          <span>Community</span>
+          <strong>Knowledge & behavior</strong>
+        </div>
+
+        <div class="mini-card decision">
+          <span>Decision</span>
+          <strong>Planning & adaptation</strong>
+        </div>
       </div>
 
     </div>
   </section>
 
-  <section class="section">
+  <section class="stats-strip">
+    <div class="container stats-grid">
+      <div>
+        <span class="stat-number">01</span>
+        <p>Urban water and environmental systems</p>
+      </div>
+
+      <div>
+        <span class="stat-number">02</span>
+        <p>Climate risk and infrastructure resilience</p>
+      </div>
+
+      <div>
+        <span class="stat-number">03</span>
+        <p>Community knowledge and decision support</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="research" class="section page-section">
     <div class="container">
 
       <div class="section-heading">
-        <p class="eyebrow">What we study</p>
-        <h2>Research at the intersection of water, environment, infrastructure, and communities</h2>
+        <p class="eyebrow">Research</p>
+        <h2>Research themes</h2>
+        <p>
+          Our work connects physical water processes with infrastructure systems,
+          environmental change, social behavior, governance, and policy decisions.
+        </p>
       </div>
 
       <div class="card-grid three">
 
-        <article class="card">
+        <article class="research-card">
+          <div class="card-icon">≈</div>
           <h3>Urban Flooding & Climate Risk</h3>
           <p>
-            Flood exposure, stormwater systems, climate hazards, infrastructure performance,
-            and uneven risk across communities.
+            Flood exposure, stormwater systems, compound hazards, infrastructure
+            performance, and uneven climate risk across communities.
           </p>
         </article>
 
-        <article class="card">
+        <article class="research-card">
+          <div class="card-icon">◌</div>
           <h3>Water, Environment & Sustainability</h3>
           <p>
-            Urban hydrosystems, water affordability, conservation, human-environment interactions,
-            and sustainability-oriented planning.
+            Urban hydrosystems, water affordability, conservation, human-environment
+            interactions, and sustainability-oriented planning.
           </p>
         </article>
 
-        <article class="card">
-          <h3>Community & Decision Support</h3>
+        <article class="research-card">
+          <div class="card-icon">⌂</div>
+          <h3>GSI, Behavior & Adoption</h3>
           <p>
-            Citizen science, stakeholder perceptions, governance networks, behavioral adoption,
-            and practical tools for climate adaptation.
+            Household green stormwater infrastructure adoption, social influence,
+            affordability, behavioral factors, and spatial flood exposure.
+          </p>
+        </article>
+
+        <article class="research-card">
+          <div class="card-icon">◇</div>
+          <h3>Governance & Community Knowledge</h3>
+          <p>
+            Citizen science, stakeholder perceptions, governance networks,
+            cross-sector coordination, and community-informed adaptation.
+          </p>
+        </article>
+
+        <article class="research-card">
+          <div class="card-icon">⟲</div>
+          <h3>Socio-Hydrology & Coupled Systems</h3>
+          <p>
+            Feedbacks among people, institutions, infrastructure, water systems,
+            and environmental change.
+          </p>
+        </article>
+
+        <article class="research-card">
+          <div class="card-icon">▦</div>
+          <h3>Data, Modeling & Decision Support</h3>
+          <p>
+            Geospatial analysis, hydrologic modeling, agent-based modeling,
+            network analysis, remote sensing, and practical decision tools.
           </p>
         </article>
 
@@ -107,45 +196,133 @@
     </div>
   </section>
 
-  <section class="section muted">
+  <section id="projects" class="section muted page-section">
     <div class="container">
 
       <div class="section-heading">
-        <p class="eyebrow">Featured directions</p>
-        <h2>Current and emerging lab themes</h2>
+        <p class="eyebrow">Projects</p>
+        <h2>Current and emerging directions</h2>
+        <p>
+          Projects in the UHR Lab connect scientific analysis with applied questions
+          in flood risk, infrastructure resilience, community adaptation, and sustainability.
+        </p>
       </div>
 
-      <div class="feature-list">
+      <div class="project-list">
 
-        <article class="feature-item">
-          <span class="number">01</span>
+        <article class="project-item">
+          <span class="project-number">01</span>
           <div>
-            <h3>Flood risk burden and protection gaps</h3>
+            <h3>Flood risk burden and insurance protection gaps</h3>
             <p>
-              Understanding how flood losses, insurance coverage, public residual losses,
+              Examining how flood losses, insurance coverage gaps, public residual losses,
               and institutional burdens vary across urban communities.
             </p>
+            <div class="chip-row">
+              <span>Flood risk</span>
+              <span>Insurance gaps</span>
+              <span>Equity</span>
+            </div>
           </div>
         </article>
 
-        <article class="feature-item">
-          <span class="number">02</span>
+        <article class="project-item">
+          <span class="project-number">02</span>
           <div>
             <h3>Green stormwater infrastructure adoption</h3>
             <p>
               Modeling how household behavior, social influence, affordability,
-              flood exposure, and environmental attitudes shape GSI adoption.
+              environmental perception, and flood exposure shape GSI adoption.
+            </p>
+            <div class="chip-row">
+              <span>ABM</span>
+              <span>Stormwater</span>
+              <span>Behavior</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-item">
+          <span class="project-number">03</span>
+          <div>
+            <h3>Flood governance networks and stakeholder perception</h3>
+            <p>
+              Studying collaboration, coordination, and perception across organizations
+              involved in flood risk management and adaptation planning.
+            </p>
+            <div class="chip-row">
+              <span>Governance</span>
+              <span>Networks</span>
+              <span>Perception</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-item">
+          <span class="project-number">04</span>
+          <div>
+            <h3>Community-informed urban flood modeling</h3>
+            <p>
+              Integrating resident knowledge, citizen science, and hydrologic modeling
+              to improve flood risk understanding and local decision-making.
+            </p>
+            <div class="chip-row">
+              <span>Citizen science</span>
+              <span>Hydrology</span>
+              <span>Decision support</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section id="people" class="section page-section">
+    <div class="container">
+
+      <div class="section-heading">
+        <p class="eyebrow">People</p>
+        <h2>Lab members</h2>
+        <p>
+          The UHR Lab is building a research team focused on urban water systems,
+          climate resilience, environmental systems, infrastructure, and community-engaged research.
+        </p>
+      </div>
+
+      <div class="people-grid">
+
+        <article class="profile-card">
+          <div class="profile-photo placeholder">KA</div>
+          <div>
+            <h3>Koorosh Azizi, Ph.D.</h3>
+            <p class="role">Principal Investigator</p>
+            <p>
+              Assistant Professor, Department of Civil and Architectural Engineering,
+              Tennessee State University.
             </p>
           </div>
         </article>
 
-        <article class="feature-item">
-          <span class="number">03</span>
+        <article class="profile-card soft">
+          <div class="profile-photo small-placeholder">GR</div>
           <div>
-            <h3>Community-informed flood governance</h3>
+            <h3>Graduate Researchers</h3>
             <p>
-              Studying how local knowledge, stakeholder perception, governance networks,
-              and cross-sector coordination affect flood resilience decisions.
+              Student profiles will be added as the lab grows. Research opportunities
+              may include flooding, hydrology, stormwater, GIS, modeling, and decision support.
+            </p>
+          </div>
+        </article>
+
+        <article class="profile-card soft">
+          <div class="profile-photo small-placeholder">UR</div>
+          <div>
+            <h3>Undergraduate Researchers</h3>
+            <p>
+              Undergraduate students can contribute to GIS mapping, data analysis,
+              literature synthesis, visualization, and community-focused research.
             </p>
           </div>
         </article>
@@ -155,19 +332,146 @@
     </div>
   </section>
 
-  <section class="section">
-    <div class="container callout">
-      <div>
-        <p class="eyebrow">Students and collaborators</p>
-        <h2>Join a lab focused on applied, community-relevant urban water research.</h2>
+  <section id="publications" class="section muted page-section">
+    <div class="container">
+
+      <div class="section-heading">
+        <p class="eyebrow">Publications</p>
+        <h2>Selected research areas</h2>
         <p>
-          The UHR Lab welcomes students interested in hydrology, flooding, stormwater,
-          GIS, data science, environmental justice, infrastructure resilience, and
-          community-engaged research.
+          Publications will be organized by theme so visitors can quickly understand
+          the lab’s intellectual contributions.
         </p>
       </div>
 
-      <a class="button primary" href="join.html">Opportunities</a>
+      <div class="card-grid three">
+
+        <article class="research-card">
+          <h3>Flooding, Climate Risk & Governance</h3>
+          <p>
+            Research on urban flooding, flood governance, citizen science,
+            stakeholder perception, and climate adaptation.
+          </p>
+        </article>
+
+        <article class="research-card">
+          <h3>Urban Water, Affordability & Sustainability</h3>
+          <p>
+            Research on drinking water systems, water conservation, affordability,
+            equity, and sustainability in urban water management.
+          </p>
+        </article>
+
+        <article class="research-card">
+          <h3>Green Stormwater Infrastructure & Modeling</h3>
+          <p>
+            Research on GSI adoption, household behavior, spatial exposure,
+            and agent-based modeling.
+          </p>
+        </article>
+
+      </div>
+
+      <div class="button-row centered">
+        <a class="button primary" href="https://scholar.google.com/" target="_blank" rel="noopener">
+          Google Scholar
+        </a>
+        <a class="button secondary" href="#contact">Request CV</a>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="tools" class="section page-section">
+    <div class="container">
+
+      <div class="section-heading">
+        <p class="eyebrow">Tools & Data</p>
+        <h2>Models, maps, datasets, and decision-support products</h2>
+        <p>
+          The lab develops workflows and tools that support research, planning,
+          communication, and climate resilience decisions.
+        </p>
+      </div>
+
+      <div class="tool-grid">
+
+        <article class="tool-card">
+          <h3>Models</h3>
+          <p>Agent-based models, hydrologic workflows, risk typologies, and governance network models.</p>
+        </article>
+
+        <article class="tool-card">
+          <h3>Maps</h3>
+          <p>Flood exposure maps, infrastructure vulnerability layers, burden regimes, and spatial indicators.</p>
+        </article>
+
+        <article class="tool-card">
+          <h3>Decision Support</h3>
+          <p>Scenario tools, visualization products, and planning-oriented summaries for communities and agencies.</p>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section id="join" class="section muted page-section">
+    <div class="container join-panel">
+
+      <div>
+        <p class="eyebrow">Join Us</p>
+        <h2>Opportunities for students and collaborators</h2>
+        <p>
+          The UHR Lab welcomes students interested in hydrology, flooding, stormwater,
+          GIS, data science, environmental justice, infrastructure resilience,
+          sustainability, and community-engaged research.
+        </p>
+
+        <div class="join-columns">
+          <div>
+            <h3>Graduate students</h3>
+            <p>
+              Prospective students should share their CV, research interests,
+              and how their goals connect to the lab’s work.
+            </p>
+          </div>
+
+          <div>
+            <h3>Undergraduate students</h3>
+            <p>
+              Undergraduate students can support GIS, data analysis, literature review,
+              visualization, and project communication.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="contact" class="section page-section">
+    <div class="container contact-grid">
+
+      <div>
+        <p class="eyebrow">Contact</p>
+        <h2>Azizi Urban Hydrosystems & Resilience Lab</h2>
+        <p>
+          Department of Civil and Architectural Engineering<br />
+          Tennessee State University<br />
+          Nashville, Tennessee
+        </p>
+      </div>
+
+      <div class="contact-card">
+        <h3>Get in touch</h3>
+        <p>
+          For student opportunities, collaboration, or community partnership inquiries,
+          please include a short description of your interest.
+        </p>
+        <a class="button primary" href="mailto:kazizi@tnstate.edu">Email Dr. Azizi</a>
+      </div>
+
     </div>
   </section>
 
@@ -181,11 +485,34 @@
     </div>
 
     <div>
-      <p>Department of Civil and Architectural Engineering</p>
-      <p>Nashville, Tennessee</p>
+      <p>Urban water, environmental, infrastructure, and community systems</p>
+      <p>Climate resilience and sustainable decision-making</p>
     </div>
   </div>
 </footer>
+
+<script>
+  const sections = document.querySelectorAll(".page-section");
+  const navLinks = document.querySelectorAll(".nav-links a");
+
+  window.addEventListener("scroll", () => {
+    let current = "";
+
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 140;
+      if (window.scrollY >= sectionTop) {
+        current = section.getAttribute("id");
+      }
+    });
+
+    navLinks.forEach(link => {
+      link.classList.remove("active");
+      if (link.getAttribute("href") === "#" + current) {
+        link.classList.add("active");
+      }
+    });
+  });
+</script>
 
 </body>
 </html>
