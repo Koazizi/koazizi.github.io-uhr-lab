@@ -4,202 +4,2317 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Azizi Urban Hydrosystems & Resilience Lab | UHR Lab</title>
+  <title>Urban Hydrosystems & Resilience Lab | UHR Lab</title>
 
   <meta
     name="description"
-    content="The Azizi Urban Hydrosystems & Resilience Lab at Tennessee State University studies urban water, environmental, infrastructure, and community systems for climate resilience and sustainable decision-making."
+    content="The Urban Hydrosystems & Resilience Lab at Tennessee State University studies urban water, environmental, infrastructure, and community systems for climate resilience and sustainable decision-making."
   />
 
-  <link rel="stylesheet" href="style.css" />
+  <style>
+    :root {
+      --navy: #071827;
+      --blue: #123047;
+      --deep-teal: #0d4f4b;
+      --teal: #0f766e;
+      --mint: #dff4f0;
+      --pale-mint: #f0faf8;
+      --sand: #f7f1e6;
+      --cream: #fbfaf7;
+      --white: #ffffff;
+      --text: #172033;
+      --muted: #5b6678;
+      --border: #dde5ea;
+      --shadow: 0 16px 42px rgba(15, 23, 42, 0.10);
+      --soft-shadow: 0 10px 28px rgba(15, 23, 42, 0.06);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--cream);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; }
+
+    .container {
+      width: min(1160px, 92%);
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(251, 250, 247, 0.96);
+      border-bottom: 1px solid rgba(221, 229, 234, 0.9);
+      backdrop-filter: blur(14px);
+    }
+
+    .nav-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 12px 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--navy);
+      text-decoration: none;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .brand-mark {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 34px;
+      border-radius: 12px;
+      color: var(--white);
+      background: linear-gradient(135deg, var(--deep-teal), var(--teal));
+      letter-spacing: 0.04em;
+      box-shadow: 0 10px 22px rgba(15, 118, 110, 0.18);
+    }
+
+    .brand-text { font-size: 1rem; }
+
+    .tab-list {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 5px;
+      flex-wrap: wrap;
+    }
+
+    .tab-button {
+      padding: 7px 10px;
+      border: none;
+      border-radius: 999px;
+      background: transparent;
+      color: #344256;
+      font-family: inherit;
+      font-size: 0.88rem;
+      font-weight: 800;
+      cursor: pointer;
+      transition: 0.18s ease;
+    }
+
+    .tab-button:hover,
+    .tab-button.active {
+      color: var(--white);
+      background: var(--deep-teal);
+    }
+
+    .tab-panel[hidden] { display: none !important; }
+    .tab-panel { animation: fadeIn 0.24s ease; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(5px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+
+
+    .accent-water {
+      color: var(--deep-teal);
+      font-weight: 850;
+    }
+
+    .accent-systems {
+      color: var(--blue);
+      font-weight: 850;
+    }
+
+    .accent-community {
+      color: #9b7432;
+      font-weight: 850;
+    }
+
+    .page-header h1::after {
+      content: "";
+      display: block;
+      width: 82px;
+      height: 5px;
+      margin-top: 14px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--deep-teal), #9b7432);
+    }
+
+    .page-header .eyebrow {
+      color: var(--deep-teal);
+    }
+
+    .research-card,
+    .theme-card,
+    .tool-card,
+    .publication-card,
+    .plain-card,
+    .profile-card,
+    .contact-card,
+    .news-item {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .research-card::before,
+    .theme-card::before,
+    .tool-card::before,
+    .publication-card::before,
+    .plain-card::before,
+    .profile-card::before,
+    .contact-card::before,
+    .news-item::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      height: 5px;
+      background: linear-gradient(90deg, var(--deep-teal), var(--teal));
+    }
+
+    .research-card:nth-child(2)::before,
+    .theme-card:nth-child(2)::before,
+    .tool-card:nth-child(2)::before,
+    .plain-card:nth-child(2)::before,
+    .contact-card:nth-child(2)::before {
+      background: linear-gradient(90deg, var(--blue), var(--deep-teal));
+    }
+
+    .research-card:nth-child(3)::before,
+    .theme-card:nth-child(3)::before,
+    .tool-card:nth-child(3)::before,
+    .plain-card:nth-child(3)::before,
+    .contact-card:nth-child(3)::before {
+      background: linear-gradient(90deg, #9b7432, var(--deep-teal));
+    }
+
+    .theme-card:nth-child(1) .theme-header {
+      background:
+        radial-gradient(circle at top right, rgba(15, 118, 110, 0.16), transparent 34%),
+        linear-gradient(135deg, #ffffff, #edf8f6);
+    }
+
+    .theme-card:nth-child(2) .theme-header {
+      background:
+        radial-gradient(circle at top right, rgba(18, 48, 71, 0.12), transparent 34%),
+        linear-gradient(135deg, #ffffff, #eef4f6);
+    }
+
+    .theme-card:nth-child(3) .theme-header {
+      background:
+        radial-gradient(circle at top right, rgba(196, 154, 82, 0.14), transparent 34%),
+        linear-gradient(135deg, #ffffff, #fbf5e8);
+    }
+
+    .theme-card:nth-child(1) .theme-header h2,
+    .research-card:nth-child(1) h3 {
+      color: var(--deep-teal);
+    }
+
+    .theme-card:nth-child(2) .theme-header h2,
+    .research-card:nth-child(2) h3 {
+      color: var(--blue);
+    }
+
+    .theme-card:nth-child(3) .theme-header h2,
+    .research-card:nth-child(3) h3 {
+      color: #9b7432;
+    }
+
+    .project-mini {
+      border-top: 4px solid rgba(15, 118, 110, 0.72);
+    }
+
+    .theme-card:nth-child(2) .project-mini {
+      border-top-color: rgba(18, 48, 71, 0.72);
+    }
+
+    .theme-card:nth-child(3) .project-mini {
+      border-top-color: rgba(155, 116, 50, 0.72);
+    }
+
+    .method-tags span:nth-child(3n + 1),
+    .chip-row span:nth-child(3n + 1) {
+      color: var(--deep-teal);
+      background: rgba(15, 118, 110, 0.08);
+      border-color: rgba(15, 118, 110, 0.18);
+    }
+
+    .method-tags span:nth-child(3n + 2),
+    .chip-row span:nth-child(3n + 2) {
+      color: var(--blue);
+      background: rgba(18, 48, 71, 0.07);
+      border-color: rgba(18, 48, 71, 0.14);
+    }
+
+    .method-tags span:nth-child(3n),
+    .chip-row span:nth-child(3n) {
+      color: #8a662c;
+      background: rgba(196, 154, 82, 0.11);
+      border-color: rgba(196, 154, 82, 0.22);
+    }
+
+    .pub-year {
+      background: linear-gradient(135deg, var(--deep-teal), var(--blue));
+    }
+
+    .publication-card:nth-child(even) .pub-year {
+      background: linear-gradient(135deg, var(--blue), #9b7432);
+    }
+
+    .publication-card h3 {
+      color: var(--navy);
+    }
+
+    .publication-card:hover h3,
+    .tool-card:hover h3,
+    .plain-card:hover h3,
+    .contact-card:hover h3 {
+      color: var(--deep-teal);
+    }
+
+    .tool-card:nth-child(1) h3,
+    .plain-card:nth-child(1) h3 {
+      color: var(--deep-teal);
+    }
+
+    .tool-card:nth-child(2) h3,
+    .plain-card:nth-child(2) h3 {
+      color: var(--blue);
+    }
+
+    .tool-card:nth-child(3) h3,
+    .plain-card:nth-child(3) h3 {
+      color: #9b7432;
+    }
+
+    .join-panel {
+      border-top: 6px solid var(--deep-teal);
+    }
+
+    .contact-card h3 {
+      color: var(--deep-teal);
+    }
+
+
+    .home-fold {
+      min-height: calc(100vh - 68px);
+      min-height: calc(100dvh - 68px);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .home-fold .hero {
+      flex: 1 1 auto;
+      display: flex;
+      align-items: center;
+    }
+
+    .home-fold .home-intro {
+      flex: 0 0 auto;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 50px 0 40px;
+      background:
+        radial-gradient(circle at 12% 18%, rgba(15, 118, 110, 0.18), transparent 30%),
+        radial-gradient(circle at 84% 16%, rgba(18, 48, 71, 0.18), transparent 34%),
+        linear-gradient(135deg, #f9fbfa 0%, #e7f5f2 54%, #f7f1e6 100%);
+    }
+
+
+    .lab-identity-banner {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      max-width: 100%;
+      margin-bottom: 14px;
+      padding: 8px 15px 8px 9px;
+      border-radius: 999px;
+      color: var(--navy);
+      background: rgba(255, 255, 255, 0.78);
+      box-shadow: 0 10px 24px rgba(7, 24, 39, 0.07);
+      border: 1px solid rgba(18, 48, 71, 0.14);
+      text-align: left;
+      backdrop-filter: blur(10px);
+    }
+
+    .lab-identity-banner::before {
+      content: "UHR";
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 30px;
+      border-radius: 999px;
+      color: var(--white);
+      background: var(--blue);
+      font-size: 0.76rem;
+      font-weight: 900;
+      letter-spacing: 0.06em;
+      flex: 0 0 auto;
+    }
+
+    .lab-identity-banner span {
+      font-size: clamp(0.82rem, 1.05vw, 0.96rem);
+      font-weight: 900;
+      letter-spacing: 0.075em;
+      text-transform: uppercase;
+      line-height: 1.15;
+    }
+
+
+    .hero-grid {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: minmax(0, 1.14fr) minmax(325px, 0.86fr);
+      column-gap: 30px;
+      row-gap: 0;
+      align-items: center;
+    }
+
+    .eyebrow {
+      margin: 0 0 10px;
+      color: var(--teal);
+      font-size: 0.74rem;
+      font-weight: 900;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3 { margin-top: 0; }
+
+    h1 {
+      max-width: 900px;
+      margin-bottom: 12px;
+      color: var(--navy);
+      font-size: clamp(1.78rem, 3.35vw, 3.0rem);
+      line-height: 1.04;
+      letter-spacing: -0.045em;
+    }
+
+    h2 {
+      margin-bottom: 14px;
+      color: var(--navy);
+      font-size: clamp(1.55rem, 2.5vw, 2.3rem);
+      line-height: 1.16;
+      letter-spacing: -0.035em;
+    }
+
+    h3 {
+      margin-bottom: 9px;
+      color: var(--blue);
+      font-size: 1.08rem;
+    }
+
+    p { margin-top: 0; }
+
+    .hero-text {
+      max-width: 780px;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .button-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin: 16px 0 12px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 38px;
+      padding: 9px 16px;
+      border-radius: 999px;
+      font-weight: 900;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: 0.2s ease;
+      font-family: inherit;
+      font-size: 0.92rem;
+    }
+
+    .button.primary {
+      color: var(--white);
+      background: linear-gradient(135deg, var(--deep-teal), var(--teal));
+      box-shadow: 0 12px 24px rgba(15, 118, 110, 0.22);
+    }
+
+    .button.primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 32px rgba(15, 118, 110, 0.28);
+    }
+
+    .button.secondary {
+      color: var(--deep-teal);
+      background: rgba(255, 255, 255, 0.82);
+      border: 1px solid rgba(15, 118, 110, 0.28);
+    }
+
+    .button.secondary:hover { background: var(--mint); }
+
+    .hero-tags,
+    .chip-row,
+    .method-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+    }
+
+    .hero-tags span,
+    .chip-row span,
+    .method-tags span {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 5px 11px;
+      border-radius: 999px;
+      color: var(--deep-teal);
+      background: rgba(255, 255, 255, 0.78);
+      border: 1px solid rgba(15, 118, 110, 0.14);
+      font-size: 0.8rem;
+      font-weight: 800;
+    }
+
+    .hero-visual-card {
+      border-radius: 30px;
+      overflow: hidden;
+      background: var(--white);
+      border: 1px solid rgba(15, 118, 110, 0.18);
+      box-shadow: var(--shadow);
+    }
+
+    .visual-wrap {
+      width: 100%;
+      background: #edf8f5;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .visual-wrap.hero-visual {
+      min-height: 285px;
+    }
+
+    .svg-visual {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .hero-visual-caption {
+      padding: 14px;
+      background: var(--white);
+    }
+
+    .hero-visual-caption h2 {
+      font-size: 1.16rem;
+      margin-bottom: 8px;
+    }
+
+    .hero-visual-caption p {
+      color: var(--muted);
+      margin-bottom: 0;
+      font-size: 0.96rem;
+    }
+
+
+    .hero h1 {
+      max-width: 880px;
+    }
+
+    .hero .eyebrow {
+      margin-bottom: 6px;
+    }
+
+    .hero-tags span {
+      min-height: 24px;
+      padding: 4px 10px;
+      font-size: 0.76rem;
+    }
+
+    .hero-visual-card {
+      transform: translateY(-8px);
+    }
+
+    .home-intro {
+      padding: 20px 0;
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 30px;
+      align-items: start;
+    }
+
+    .home-intro h2 {
+      color: var(--white);
+      margin-bottom: 0;
+    }
+
+    .home-intro p {
+      color: #d9e3ea;
+      font-size: 1rem;
+    }
+
+
+    .home-intro .eyebrow {
+      margin-bottom: 6px;
+      font-size: 0.68rem;
+    }
+
+    .home-intro h2 {
+      font-size: clamp(1.12rem, 1.65vw, 1.42rem);
+      line-height: 1.14;
+      letter-spacing: -0.025em;
+    }
+
+    .home-intro p {
+      font-size: 0.88rem;
+      line-height: 1.42;
+      margin-bottom: 0;
+    }
+
+    .home-intro .intro-grid {
+      grid-template-columns: 0.72fr 1.28fr;
+      gap: 26px;
+      align-items: center;
+    }
+
+    .section { padding: 70px 0; }
+    .section.muted { background: #f4f8f7; }
+
+    .page-header {
+      padding: 54px 0 30px;
+      background:
+        radial-gradient(circle at top right, rgba(15, 118, 110, 0.12), transparent 32%),
+        linear-gradient(135deg, #f9fbfa, #eef8f6);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .page-header p {
+      max-width: 850px;
+      color: var(--muted);
+      font-size: 1.02rem;
+    }
+
+    .section-heading {
+      max-width: 850px;
+      margin-bottom: 30px;
+    }
+
+    .section-heading.compact { max-width: 720px; }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .card-grid {
+      display: grid;
+      gap: 20px;
+    }
+
+    .card-grid.three { grid-template-columns: repeat(3, 1fr); }
+    .card-grid.two { grid-template-columns: repeat(2, 1fr); }
+
+    .research-card,
+    .theme-card,
+    .tool-card,
+    .contact-card,
+    .publication-card,
+    .plain-card,
+    .feature-card,
+    .framework-card {
+      padding: 24px;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      background: var(--white);
+      box-shadow: var(--soft-shadow);
+      transition: 0.2s ease;
+    }
+
+    .research-card:hover,
+    .theme-card:hover,
+    .tool-card:hover,
+    .feature-card:hover,
+    .publication-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 42px rgba(15, 23, 42, 0.09);
+    }
+
+    .research-card p,
+    .theme-card p,
+    .tool-card p,
+    .project-item p,
+    .profile-card p,
+    .contact-card p,
+    .publication-card p,
+    .plain-card p,
+    .feature-card p,
+    .framework-card p,
+    .callout-clean p {
+      color: var(--muted);
+    }
+
+    .theme-preview {
+      width: calc(100% + 48px);
+      margin: -24px -24px 20px;
+      border-radius: 22px 22px 0 0;
+      overflow: hidden;
+      background: var(--pale-mint);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .theme-preview .svg-visual {
+      height: 170px;
+      width: 100%;
+    }
+
+    .theme-stack {
+      display: grid;
+      gap: 26px;
+    }
+
+    .theme-card {
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .theme-image {
+      background: var(--pale-mint);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .theme-image .svg-visual {
+      height: 260px;
+      width: 100%;
+    }
+
+    .theme-header {
+      padding: 26px;
+      background:
+        radial-gradient(circle at top right, rgba(15, 118, 110, 0.15), transparent 34%),
+        linear-gradient(135deg, var(--white), var(--pale-mint));
+      border-bottom: 1px solid var(--border);
+    }
+
+    .theme-body { padding: 26px; }
+
+    .framework-card {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 26px;
+      align-items: center;
+      background:
+        radial-gradient(circle at top left, rgba(15,118,110,0.10), transparent 32%),
+        var(--white);
+    }
+
+    .coupled-diagram {
+      display: grid;
+      gap: 12px;
+    }
+
+    .coupled-node {
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: var(--pale-mint);
+      border: 1px solid rgba(15,118,110,0.18);
+    }
+
+    .coupled-node strong {
+      display: block;
+      color: var(--deep-teal);
+      margin-bottom: 4px;
+    }
+
+    .coupled-arrow {
+      text-align: center;
+      color: var(--teal);
+      font-weight: 900;
+    }
+
+    .project-mini-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 18px;
+    }
+
+    .project-mini {
+      padding: 14px;
+      border-radius: 18px;
+      background: var(--cream);
+      border: 1px solid var(--border);
+    }
+
+    .project-mini h4 {
+      margin: 0 0 8px;
+      color: var(--deep-teal);
+      font-size: 0.94rem;
+    }
+
+    .project-mini p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.91rem;
+    }
+
+    .feature-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .feature-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      margin-bottom: 18px;
+      border-radius: 50%;
+      color: var(--white);
+      background: var(--blue);
+      font-weight: 900;
+    }
+
+    .project-list {
+      display: grid;
+      gap: 18px;
+    }
+
+    .project-item {
+      display: grid;
+      grid-template-columns: 72px 1fr;
+      gap: 20px;
+      padding: 24px;
+      border-radius: 24px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      box-shadow: var(--soft-shadow);
+    }
+
+    .project-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      color: var(--white);
+      background: var(--blue);
+      font-weight: 900;
+    }
+
+    .chip-row { margin-top: 12px; }
+
+    .people-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr;
+      gap: 20px;
+    }
+
+    .profile-card {
+      display: grid;
+      grid-template-columns: 90px 1fr;
+      gap: 18px;
+      align-items: start;
+      padding: 24px;
+      border-radius: 24px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      box-shadow: var(--soft-shadow);
+    }
+
+    .profile-card.soft { grid-template-columns: 64px 1fr; }
+
+    .profile-photo {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 20px;
+      color: var(--white);
+      background: linear-gradient(135deg, var(--blue), var(--teal));
+      font-weight: 900;
+    }
+
+    .placeholder { width: 90px; height: 90px; font-size: 1.16rem; }
+    .small-placeholder { width: 64px; height: 64px; font-size: 0.94rem; }
+
+    .role {
+      margin-bottom: 8px;
+      color: var(--deep-teal) !important;
+      font-weight: 900;
+    }
+
+    .publication-list {
+      display: grid;
+      gap: 18px;
+    }
+
+    .publication-card {
+      display: grid;
+      grid-template-columns: 132px 1fr;
+      gap: 20px;
+      align-items: start;
+    }
+
+    .pub-year {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 82px;
+      height: 44px;
+      border-radius: 999px;
+      color: var(--white);
+      background: var(--deep-teal);
+      font-weight: 900;
+    }
+
+    .pub-meta {
+      margin-bottom: 8px;
+      color: var(--deep-teal) !important;
+      font-weight: 900;
+    }
+
+    .link-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .mini-link {
+      display: inline-flex;
+      align-items: center;
+      padding: 7px 12px;
+      border-radius: 999px;
+      color: var(--deep-teal);
+      background: var(--pale-mint);
+      border: 1px solid rgba(15, 118, 110, 0.18);
+      text-decoration: none;
+      font-size: 0.84rem;
+      font-weight: 900;
+    }
+
+    .tool-grid,
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+
+
+    .coupled-hero-label {
+      display: inline-flex;
+      align-items: center;
+      padding: 7px 12px;
+      border-radius: 999px;
+      color: var(--white);
+      background: linear-gradient(135deg, var(--deep-teal), var(--teal));
+      font-size: 0.72rem;
+      font-weight: 900;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .coupled-hero-title {
+      font-size: clamp(2.05rem, 3.55vw, 3.15rem);
+      line-height: 0.98;
+      letter-spacing: -0.055em;
+      margin-bottom: 12px;
+      color: var(--navy);
+    }
+
+    .coupled-home-banner {
+      padding: 38px 0 30px;
+      background:
+        radial-gradient(circle at top left, rgba(15, 118, 110, 0.10), transparent 34%),
+        linear-gradient(135deg, #fbfaf7, #f0faf8);
+    }
+
+    .translation-grid {
+      display: grid;
+      grid-template-columns: 0.92fr 1.08fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .translation-lead {
+      padding: 30px;
+      border-radius: 26px;
+      color: var(--white);
+      background:
+        radial-gradient(circle at top right, rgba(223, 244, 240, 0.16), transparent 36%),
+        linear-gradient(135deg, #071827 0%, #123047 72%, #0d4f4b 100%);
+      box-shadow: var(--shadow);
+    }
+
+    .translation-lead .eyebrow {
+      color: #a7efe3;
+    }
+
+    .translation-lead h2 {
+      color: var(--white);
+      font-size: clamp(1.75rem, 2.75vw, 2.55rem);
+      line-height: 1.02;
+      margin-bottom: 12px;
+    }
+
+    .translation-lead p {
+      color: #d9e9e8;
+      margin-bottom: 0;
+      font-size: 0.96rem;
+      line-height: 1.48;
+    }
+
+    .translation-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    .translation-step {
+      padding: 18px;
+      border-radius: 20px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      box-shadow: var(--soft-shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .translation-step::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      height: 5px;
+      background: linear-gradient(90deg, var(--deep-teal), var(--teal));
+    }
+
+    .translation-step:nth-child(2)::before {
+      background: linear-gradient(90deg, var(--blue), var(--deep-teal));
+    }
+
+    .translation-step:nth-child(3)::before {
+      background: linear-gradient(90deg, #9b7432, var(--deep-teal));
+    }
+
+    .translation-step span {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      margin-bottom: 12px;
+      border-radius: 50%;
+      color: var(--white);
+      background: var(--deep-teal);
+      font-weight: 900;
+    }
+
+    .translation-step:nth-child(2) span {
+      background: var(--blue);
+    }
+
+    .translation-step:nth-child(3) span {
+      background: #9b7432;
+    }
+
+    .translation-step h3 {
+      margin-bottom: 8px;
+    }
+
+    .translation-step p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 0.86rem;
+      line-height: 1.42;
+    }
+
+
+    #home > .section {
+      padding: 50px 0;
+    }
+
+    #home > .section.muted {
+      padding: 44px 0;
+    }
+
+    #home .callout-clean {
+      margin-top: 0;
+    }
+
+    #home .section-heading {
+      margin-bottom: 22px;
+    }
+
+
+    .news-list {
+      display: grid;
+      gap: 18px;
+    }
+
+    .news-item {
+      display: grid;
+      grid-template-columns: 132px 1fr;
+      gap: 20px;
+      align-items: start;
+      padding: 24px;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      background: var(--white);
+      box-shadow: var(--soft-shadow);
+    }
+
+    .news-date {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 104px;
+      min-height: 44px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      color: var(--white);
+      background: var(--deep-teal);
+      font-weight: 900;
+      text-align: center;
+      line-height: 1.15;
+    }
+
+    .news-item p {
+      color: var(--muted);
+    }
+
+
+    .photo-preview,
+    .photo-banner {
+      position: relative;
+      overflow: hidden;
+      background: var(--pale-mint);
+    }
+
+    .photo-preview img,
+    .photo-banner img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: saturate(0.96) contrast(1.02);
+      transition: transform 0.28s ease, filter 0.28s ease;
+    }
+
+    .photo-preview {
+      height: 170px;
+    }
+
+    .photo-banner {
+      height: 285px;
+    }
+
+    .photo-preview::after,
+    .photo-banner::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(7, 24, 39, 0.04), rgba(7, 24, 39, 0.32));
+      pointer-events: none;
+    }
+
+    .research-card:hover .photo-preview img,
+    .theme-card:hover .photo-banner img {
+      transform: scale(1.035);
+      filter: saturate(1.02) contrast(1.04);
+    }
+
+    .image-source {
+      position: absolute;
+      right: 8px;
+      bottom: 7px;
+      z-index: 2;
+      display: inline-flex;
+      align-items: center;
+      max-width: calc(100% - 16px);
+      padding: 3px 6px;
+      border-radius: 999px;
+      color: rgba(255, 255, 255, 0.92);
+      background: rgba(7, 24, 39, 0.42);
+      font-size: 0.52rem;
+      font-weight: 750;
+      letter-spacing: 0.015em;
+      backdrop-filter: blur(5px);
+      opacity: 0.72;
+    }
+
+
+    .theme-card:nth-child(1) .photo-banner img,
+    .research-card:nth-child(1) .photo-preview img {
+      object-position: center center;
+    }
+
+    .theme-card:nth-child(2) .photo-banner img,
+    .research-card:nth-child(2) .photo-preview img {
+      object-position: center center;
+    }
+
+    .theme-card:nth-child(3) .photo-banner img,
+    .research-card:nth-child(3) .photo-preview img {
+      object-position: center center;
+    }
+
+    .join-panel,
+    .callout-clean {
+      padding: 38px;
+      border-radius: 28px;
+      background:
+        radial-gradient(circle at top right, rgba(15, 118, 110, 0.12), transparent 30%),
+        var(--white);
+      border: 1px solid rgba(15, 118, 110, 0.14);
+      box-shadow: var(--shadow);
+    }
+
+    .callout-clean {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 32px;
+      align-items: center;
+      background:
+        radial-gradient(circle at top right, rgba(15, 118, 110, 0.12), transparent 30%),
+        var(--sand);
+    }
+
+    .callout-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .join-columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+      margin-top: 24px;
+    }
+
+    .join-columns div {
+      padding: 14px;
+      border-radius: 20px;
+      background: var(--pale-mint);
+      border: 1px solid rgba(15, 118, 110, 0.14);
+    }
+
+    .footer {
+      padding: 34px 0;
+      color: var(--white);
+      background: var(--navy);
+    }
+
+    .footer-grid {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .footer h3 {
+      margin-bottom: 6px;
+      color: var(--white);
+    }
+
+    .footer p {
+      margin: 0 0 4px;
+      color: #cbd5e1;
+    }
+
+
+
+    .visual-wrap.hero-visual {
+      min-height: 360px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-visual-card .visual-wrap.hero-visual .coupled-svg {
+      width: 100%;
+      max-width: 100%;
+      height: 360px;
+      min-height: 360px;
+      transform: none;
+      transform-origin: center center;
+    }
+
+    .hero-visual-card .coupled-svg {
+      min-height: 272px;
+    }
+    @media (max-width: 1000px) {
+
+      .home-fold {
+        min-height: auto;
+        display: block;
+      }
+
+      .nav-wrap {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .tab-list { justify-content: flex-start; }
+
+      .hero-grid,
+      .intro-grid,
+      .feature-row,
+      .callout-clean,
+      .card-grid.three,
+      .card-grid.two,
+      .people-grid,
+      .tool-grid,
+      .contact-grid,
+      .join-columns,
+      .project-mini-grid,
+      .framework-card,
+      .translation-grid,
+      .translation-steps {
+        grid-template-columns: 1fr;
+      }
+
+      .publication-card,
+      .news-item {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    
+
+    @media (max-width: 640px) {
+
+      .lab-identity-banner {
+        width: auto;
+        padding: 8px 13px 8px 8px;
+      }
+
+      .lab-identity-banner span {
+        font-size: 0.78rem;
+        letter-spacing: 0.045em;
+      }
+
+
+      .hero { padding-top: 58px; }
+      h1 { font-size: 2.1rem; }
+
+      .project-item,
+      .profile-card,
+      .profile-card.soft {
+        grid-template-columns: 1fr;
+      }
+
+      .section { padding: 56px 0; }
+      .page-header { padding: 46px 0 28px; }
+    }
+  </style>
 </head>
 
 <body>
 
-<header class="site-header">
-  <div class="container nav-wrap">
+  <header class="site-header">
+    <div class="container nav-wrap">
 
-    <a class="brand" href="index.html" aria-label="UHR Lab Home">
-      <span class="brand-mark">UHR</span>
-      <span class="brand-text">Lab</span>
-    </a>
+      <a class="brand" href="#" aria-label="UHR Lab Home" data-open-tab="home">
+        <span class="brand-mark">UHR</span>
+        <span class="brand-text">Lab</span>
+      </a>
 
-    <nav class="nav-links" aria-label="Main navigation">
-      <a href="index.html" class="active">Home</a>
-      <a href="research.html">Research</a>
-      <a href="projects.html">Projects</a>
-      <a href="people.html">People</a>
-      <a href="publications.html">Publications</a>
-      <a href="tools-data.html">Tools & Data</a>
-      <a href="join.html">Join Us</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-
-  </div>
-</header>
-
-<main>
-
-  <section class="hero">
-    <div class="container hero-grid">
-
-      <div class="hero-content">
-        <p class="eyebrow">Azizi Urban Hydrosystems & Resilience Lab</p>
-
-        <h1>
-          Urban water systems, infrastructure, environments, and communities under climate change.
-        </h1>
-
-        <p class="hero-text">
-          The UHR Lab studies how urban hydrosystems interact with climate risk,
-          infrastructure systems, environmental change, community knowledge, and decision-making
-          to support resilient, equitable, and sustainable cities.
-        </p>
-
-        <div class="button-row">
-          <a class="button primary" href="research.html">Explore Research</a>
-          <a class="button secondary" href="join.html">Join the Lab</a>
-        </div>
-
-        <div class="hero-tags" aria-label="Research keywords">
-          <span>Urban Flooding</span>
-          <span>Hydrosystems</span>
-          <span>Infrastructure</span>
-          <span>Environment</span>
-          <span>Community</span>
-          <span>Decision Support</span>
-        </div>
-      </div>
-
-      <div class="visual-panel" aria-label="Urban hydrosystems visual diagram">
-        <div class="orb orb-one"></div>
-        <div class="orb orb-two"></div>
-
-        <div class="diagram-card main-card">
-          <span class="diagram-label">Lab focus</span>
-          <h2>Coupled Urban Hydrosystems</h2>
-          <p>
-            Linking water, climate, infrastructure, environment, communities,
-            and decisions across urban systems.
-          </p>
-        </div>
-
-        <div class="mini-card water">
-          <span>Water</span>
-          <strong>Flooding, stormwater, hydrology</strong>
-        </div>
-
-        <div class="mini-card community">
-          <span>Community</span>
-          <strong>Knowledge, behavior, equity</strong>
-        </div>
-
-        <div class="mini-card decision">
-          <span>Decision</span>
-          <strong>Planning, governance, adaptation</strong>
-        </div>
-      </div>
+      <nav class="tab-list" role="tablist" aria-label="Main navigation">
+        <button class="tab-button active" role="tab" aria-selected="true" data-tab="home">Home</button>
+        <button class="tab-button" role="tab" aria-selected="false" data-tab="research">Research</button>
+        <button class="tab-button" role="tab" aria-selected="false" data-tab="people">People</button>
+        <button class="tab-button" role="tab" aria-selected="false" data-tab="publications">Publications</button>
+        <button class="tab-button" role="tab" aria-selected="false" data-tab="tools">Tools & Data</button>
+        <button class="tab-button" role="tab" aria-selected="false" data-tab="news">News</button>
+        <button class="tab-button" role="tab" aria-selected="false" data-tab="join">Join Us</button>
+        <button class="tab-button" role="tab" aria-selected="false" data-tab="contact">Contact</button>
+      </nav>
 
     </div>
-  </section>
+  </header>
 
-  <section class="home-intro">
-    <div class="container intro-grid">
+  <main>
+
+    <section id="home" class="tab-panel">
+      <div class="home-fold">
+      <div class="hero">
+        <div class="container hero-grid">
+
+          <div class="hero-content">
+            <div class="lab-identity-banner">
+              <span>Urban Hydrosystems &amp; Resilience Lab</span>
+            </div>
+
+            <h1>
+              <span class="accent-systems">Urban water systems</span>, <span class="accent-systems">infrastructure</span>, environments, and <span class="accent-community">communities</span> under climate stress.
+            </h1>
+
+            <p class="hero-text">
+              The UHR Lab studies how urban hydrosystems interact with <span class="accent-water">climate risk</span>, <span class="accent-systems">infrastructure systems</span>,
+              environmental change, <span class="accent-community">community knowledge</span>, and decision-making to support resilient, equitable,
+              and sustainable cities.
+            </p>
+
+            <div class="button-row">
+              <button class="button primary" data-open-tab="research">Explore Research</button>
+              <button class="button secondary" data-open-tab="join">Join the Lab</button>
+            </div>
+
+            <div class="hero-tags" aria-label="Research keywords">
+              <span>Urban Flooding</span>
+              <span>Hydrosystems</span>
+              <span>Infrastructure</span>
+              <span>Environment</span>
+              <span>Community</span>
+              <span>Decision Support</span>
+            </div>
+          </div>
+
+          <div class="hero-visual-card">
+            <div class="visual-wrap hero-visual">
+
+    <svg class="svg-visual coupled-svg" viewBox="28 56 844 480" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Coupled systems framework linking water, infrastructure, environment, community, governance, and decisions">
+      <defs>
+        <radialGradient id="coupledBg" cx="50%" cy="45%" r="72%">
+          <stop offset="0%" stop-color="#ffffff"/>
+          <stop offset="58%" stop-color="#e7f5f2"/>
+          <stop offset="100%" stop-color="#cfe6e4"/>
+        </radialGradient>
+        <linearGradient id="hubGrad" x1="0" x2="1" y1="0" y2="1">
+          <stop offset="0%" stop-color="#071827"/>
+          <stop offset="100%" stop-color="#0f766e"/>
+        </linearGradient>
+        <linearGradient id="nodeGradA" x1="0" x2="1" y1="0" y2="1">
+          <stop offset="0%" stop-color="#123047"/>
+          <stop offset="100%" stop-color="#0d4f4b"/>
+        </linearGradient>
+        <linearGradient id="nodeGradB" x1="0" x2="1" y1="0" y2="1">
+          <stop offset="0%" stop-color="#0f766e"/>
+          <stop offset="100%" stop-color="#7aa89f"/>
+        </linearGradient>
+        <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+          <feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#071827" flood-opacity="0.18"/>
+        </filter>
+      </defs>
+
+      <rect width="900" height="560" fill="url(#coupledBg)"/>
+
+      <g opacity="0.16" stroke="#0d4f4b" stroke-width="2">
+        <path d="M85 70 H815"/><path d="M85 170 H815"/><path d="M85 270 H815"/><path d="M85 370 H815"/><path d="M85 470 H815"/>
+        <path d="M120 50 V510"/><path d="M260 50 V510"/><path d="M400 50 V510"/><path d="M540 50 V510"/><path d="M680 50 V510"/><path d="M820 50 V510"/>
+      </g>
+
+      <g opacity="0.95" fill="none" stroke-linecap="round" stroke-width="10">
+        <path d="M450 92 C635 92 785 188 785 278 C785 380 640 468 454 468 C266 468 116 384 116 280 C116 184 263 92 450 92" stroke="#0f766e" opacity="0.5"/>
+        <path d="M450 92 C635 92 785 188 785 278" stroke="#123047" opacity="0.78"/>
+        <path d="M454 468 C266 468 116 384 116 280" stroke="#c49a52" opacity="0.78"/>
+        <path d="M116 280 C116 184 263 92 450 92" stroke="#0f766e" opacity="0.78"/>
+      </g>
+
+      <g fill="#123047" opacity="0.82">
+        <polygon points="784,278 756,258 758,291"/>
+      </g>
+      <g fill="#c49a52" opacity="0.85">
+        <polygon points="116,280 143,301 143,267"/>
+      </g>
+      <g fill="#0f766e" opacity="0.85">
+        <polygon points="450,92 420,105 451,124"/>
+      </g>
+
+      <g filter="url(#softShadow)">
+        <rect x="312" y="202" width="276" height="150" rx="32" fill="url(#hubGrad)"/>
+        <text x="450" y="258" text-anchor="middle" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="900">Coupled</text>
+        <text x="450" y="296" text-anchor="middle" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="900">Systems</text>
+        <text x="450" y="323" text-anchor="middle" fill="#dff4f0" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="700">feedbacks across urban hydrosystems</text>
+      </g>
+
+      <g filter="url(#softShadow)">
+        <rect x="38" y="70" width="310" height="124" rx="26" fill="#ffffff"/>
+        <rect x="58" y="95" width="58" height="58" rx="18" fill="url(#nodeGradA)"/>
+        <path d="M76 127 C84 109 96 109 104 127 C108 139 100 147 90 147 C80 147 71 139 76 127Z" fill="#dff4f0"/>
+        <text x="135" y="108" fill="#0d4f4b" font-family="Arial, Helvetica, sans-serif" font-size="15.5" font-weight="900">Water & climate</text>
+        <text x="135" y="134" fill="#5b6678" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="700">rainfall, runoff, flooding, exposure</text>
+        <text x="135" y="156" fill="#5b6678" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="700">and climate stress</text>
+      </g>
+
+      <g filter="url(#softShadow)">
+        <rect x="528" y="70" width="334" height="124" rx="26" fill="#ffffff"/>
+        <rect x="548" y="95" width="58" height="58" rx="18" fill="url(#nodeGradB)"/>
+        <path d="M577 107 L599 133 H587 V147 H567 V133 H555 Z" fill="#ffffff" opacity="0.9"/>
+        <text x="625" y="108" fill="#0d4f4b" font-family="Arial, Helvetica, sans-serif" font-size="14.5" font-weight="900">Infrastructure & environment</text>
+        <text x="625" y="134" fill="#5b6678" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="700">drainage, GSI, land use</text>
+        <text x="625" y="156" fill="#5b6678" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="700">and urban ecosystems</text>
+      </g>
+
+      <g filter="url(#softShadow)">
+        <rect x="295" y="410" width="310" height="116" rx="26" fill="#ffffff"/>
+        <rect x="315" y="435" width="58" height="58" rx="18" fill="#c49a52"/>
+        <circle cx="339" cy="461" r="9" fill="#ffffff"/><circle cx="357" cy="461" r="9" fill="#ffffff"/>
+        <path d="M326 483 C332 470 348 470 354 483" stroke="#ffffff" stroke-width="5" fill="none" stroke-linecap="round"/>
+        <text x="395" y="454" fill="#0d4f4b" font-family="Arial, Helvetica, sans-serif" font-size="15.5" font-weight="900">Community & decisions</text>
+        <text x="395" y="480" fill="#5b6678" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="700">knowledge, behavior, policy</text>
+        <text x="395" y="501" fill="#5b6678" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="700">governance and adaptation</text>
+      </g>
+
+      <g opacity="0.82" stroke="#071827" stroke-width="4" fill="none" stroke-linecap="round">
+        <path d="M348 134 C390 150 405 174 420 202"/>
+        <path d="M528 134 C502 154 488 178 480 202"/>
+        <path d="M450 410 C450 386 450 372 450 352"/>
+      </g>
+
+      <g fill="#071827" opacity="0.78">
+        <polygon points="420,202 400,190 415,184"/>
+        <polygon points="480,202 482,180 499,193"/>
+        <polygon points="450,352 438,374 462,374"/>
+      </g>
+    </svg>
+
+
+            </div>
+            <div class="hero-visual-caption">
+              <div class="coupled-hero-label">Lab framework</div>
+              <h2 class="coupled-hero-title">Coupled Systems</h2>
+              <p>
+                Linking water, climate, infrastructure, environment, communities,
+                and decisions across urban hydrosystems.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="home-intro">
+        <div class="container intro-grid">
+
+          <div>
+            <p class="eyebrow">What we do</p>
+            <h2>Research for resilient and sustainable urban water futures.</h2>
+          </div>
+
+          <p>
+            Our work combines <span class="accent-water">hydrologic modeling</span>, geospatial analysis, agent-based modeling,
+            <span class="accent-systems">system dynamics</span>, network analysis, and <span class="accent-community">community-engaged research</span> to understand
+            how cities can better prepare for flooding, infrastructure stress, environmental change,
+            and uneven climate impacts.
+          </p>
+
+        </div>
+      </div>
+
+
+      </div>
+
+      <div class="coupled-home-banner">
+        <div class="container translation-grid">
+          <div class="translation-lead">
+            <p class="eyebrow">Research pathway</p>
+            <h2>Coupled urban hydrosystems: theory for resilient decisions in practice.</h2>
+            <p>
+              The lab advances theory and practice by studying how urban water and climate risks emerge
+              from interactions among water, infrastructure, environmental conditions, community knowledge,
+              behavior, and governance. We use these insights to develop theory-informed models, maps,
+              and decision-support strategies that help cities strengthen resilience in practice.
+            </p>
+          </div>
+
+          <div class="translation-steps">
+            <div class="translation-step">
+              <span>01</span>
+              <h3>Diagnose risk</h3>
+              <p>Map where water, climate, infrastructure, and environmental stress interact.</p>
+            </div>
+
+            <div class="translation-step">
+              <span>02</span>
+              <h3>Explain mechanisms</h3>
+              <p>Use socio-hydrology, systems thinking, behavioral theory, and network governance to interpret why risks emerge.</p>
+            </div>
+
+            <div class="translation-step">
+              <span>03</span>
+              <h3>Model feedbacks</h3>
+              <p>Analyze how behavior, governance, infrastructure, and exposure shape outcomes over time.</p>
+            </div>
+
+            <div class="translation-step">
+              <span>04</span>
+              <h3>Support decisions</h3>
+              <p>Turn models, maps, and community knowledge into usable evidence for action.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="container">
+
+          <div class="section-heading compact">
+            <p class="eyebrow">Core research structure</p>
+            <h2>Three research themes organize the lab.</h2>
+          </div>
+
+          <div class="card-grid three">
+
+            <article class="research-card">
+              <div class="theme-preview photo-preview">
+                <img src="https://www.nist.gov/sites/default/files/2019-12/houston_flood.jpeg" alt="NOAA Coastal Flood Exposure Mapper image showing modeled storm-surge flood exposure in the Houston region" loading="lazy" />
+                <span class="image-source">NOAA / flood exposure</span>
+              </div>
+              <h3>Climate Risk & Urban Flood Dynamics</h3>
+              <p>
+                Flood exposure, stormwater systems, hydrologic modeling, infrastructure performance,
+                and flood burden under climate and land-use change.
+              </p>
+              <button class="button secondary" data-open-tab="research">View theme</button>
+            </article>
+
+            <article class="research-card">
+              <div class="theme-preview photo-preview">
+                <img src="https://www.epa.gov/sites/production/files/region8/greeninfrastructure/RainGardens/Urban4ParkingInfiltration.jpg" alt="EPA green infrastructure rain garden installed in an urban parking area for stormwater infiltration" loading="lazy" />
+                <span class="image-source">EPA / green infrastructure</span>
+              </div>
+              <h3>Sustainable Urban Water & Green Infrastructure</h3>
+              <p>
+                Drinking water affordability, water conservation, green stormwater infrastructure,
+                environmental systems, and sustainability-oriented planning.
+              </p>
+              <button class="button secondary" data-open-tab="research">View theme</button>
+            </article>
+
+            <article class="research-card">
+              <div class="theme-preview photo-preview">
+                <img src="https://www.frontiersin.org/files/Articles/1022383/xml-images/fevo-10-1022383-g002.webp" alt="Social network analysis diagram of stakeholder-related risks in a water environmental governance project" loading="lazy" />
+                <span class="image-source">Frontiers / SNA</span>
+              </div>
+              <h3>Community, Governance & Decision Support</h3>
+              <p>
+                Citizen science, local knowledge, stakeholder perceptions, governance networks,
+                behavioral responses, and adaptation decision tools.
+              </p>
+              <button class="button secondary" data-open-tab="research">View theme</button>
+            </article>
+
+          </div>
+
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="container callout-clean">
+
+          <div>
+            <p class="eyebrow">Students and collaborators</p>
+            <h2>Building a lab around applied, community-relevant urban water research.</h2>
+            <p>
+              The UHR Lab welcomes students interested in hydrology, flooding, stormwater,
+              GIS, environmental systems, infrastructure resilience, equity, and decision support.
+            </p>
+          </div>
+
+          <div class="callout-actions">
+            <button class="button primary" data-open-tab="join">Join the Lab</button>
+            <button class="button secondary" data-open-tab="contact">Contact</button>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="research" class="tab-panel" hidden>
+      <div class="page-header">
+        <div class="container">
+          <p class="eyebrow">Research</p>
+          <h1>Three research themes</h1>
+          <p>
+            The UHR Lab investigates urban hydrosystems through three connected themes:
+            <span class="accent-water">climate risk and flood dynamics</span>, <span class="accent-systems">sustainable urban water and green infrastructure</span>,
+            and <span class="accent-community">community-centered governance and decision support</span>.
+          </p>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="container theme-stack">
+
+          <article class="theme-card">
+            <div class="theme-image photo-banner">
+              <img src="https://www.nist.gov/sites/default/files/2019-12/houston_flood.jpeg" alt="NOAA Coastal Flood Exposure Mapper image showing modeled storm-surge flood exposure in the Houston region" loading="lazy" />
+              <span class="image-source">NOAA / flood exposure</span>
+            </div>
+            <div class="theme-header">
+              <p class="eyebrow">Theme 1</p>
+              <h2>Climate Risk & Urban Flood Dynamics</h2>
+              <p>
+                This theme focuses on how flooding, climate hazards, infrastructure conditions,
+                land-use change, and uneven exposure shape urban risk. It connects hydrologic
+                modeling with spatial risk analytics and climate adaptation needs.
+              </p>
+            </div>
+
+            <div class="theme-body">
+              <h3>Related projects</h3>
+              <div class="project-mini-grid">
+                <div class="project-mini">
+                  <h4>Community-informed urban flood modeling</h4>
+                  <p>
+                    Integrating resident observations, local knowledge, and hydrologic-hydrodynamic
+                    modeling to improve the characterization of urban pluvial flooding.
+                  </p>
+                </div>
+
+                <div class="project-mini">
+                  <h4>Flood burden and protection gaps</h4>
+                  <p>
+                    Analyzing how expected flood losses, insurance gaps, public residual losses,
+                    and institutional burdens vary across communities and hazards.
+                  </p>
+                </div>
+
+                <div class="project-mini">
+                  <h4>Flood exposure and spatial risk analytics</h4>
+                  <p>
+                    Using GIS, flood hazard data, remote sensing, and spatial indicators to evaluate
+                    how climate risks are distributed across urban areas.
+                  </p>
+                </div>
+              </div>
+
+              <div class="chip-row">
+                <span>Hydrology</span>
+                <span>Flood risk</span>
+                <span>Spatial analysis</span>
+                <span>Infrastructure performance</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="theme-card">
+            <div class="theme-image photo-banner">
+              <img src="https://www.epa.gov/sites/production/files/region8/greeninfrastructure/RainGardens/Urban4ParkingInfiltration.jpg" alt="EPA green infrastructure rain garden installed in an urban parking area for stormwater infiltration" loading="lazy" />
+              <span class="image-source">EPA / green infrastructure</span>
+            </div>
+            <div class="theme-header">
+              <p class="eyebrow">Theme 2</p>
+              <h2>Sustainable Urban Water & Green Infrastructure Systems</h2>
+              <p>
+                This theme examines how urban water and environmental systems can be managed
+                to support sustainability, affordability, green infrastructure adoption, and long-term
+                resilience in cities.
+              </p>
+            </div>
+
+            <div class="theme-body">
+              <h3>Related projects</h3>
+              <div class="project-mini-grid">
+                <div class="project-mini">
+                  <h4>Green stormwater infrastructure adoption</h4>
+                  <p>
+                    Modeling how household behavior, social influence, affordability, parcel feasibility,
+                    perceptions, and flood exposure shape GSI adoption.
+                  </p>
+                </div>
+
+                <div class="project-mini">
+                  <h4>Water affordability and conservation</h4>
+                  <p>
+                    Studying how conservation strategies and urban water policies affect affordability,
+                    efficiency, equity, and sustainability outcomes.
+                  </p>
+                </div>
+
+                <div class="project-mini">
+                  <h4>Environmental and infrastructure indicators</h4>
+                  <p>
+                    Developing neighborhood-scale indicators that connect stormwater infrastructure,
+                    environmental conditions, flood risk, and community vulnerability.
+                  </p>
+                </div>
+              </div>
+
+              <div class="chip-row">
+                <span>Green infrastructure</span>
+                <span>Water affordability</span>
+                <span>Sustainability</span>
+                <span>Urban environment</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="theme-card">
+            <div class="theme-image photo-banner">
+              <img src="https://www.frontiersin.org/files/Articles/1022383/xml-images/fevo-10-1022383-g002.webp" alt="Social network analysis diagram of stakeholder-related risks in a water environmental governance project" loading="lazy" />
+              <span class="image-source">Koedel et al. / Frontiers CC BY</span>
+            </div>
+            <div class="theme-header">
+              <p class="eyebrow">Theme 3</p>
+              <h2>Community, Governance & Decision Support</h2>
+              <p>
+                This theme connects technical analysis with the people, organizations, and institutions
+                that shape flood resilience and water management decisions. It emphasizes stakeholder
+                perception, governance networks, local knowledge, and usable tools.
+              </p>
+            </div>
+
+            <div class="theme-body">
+              <h3>Related projects</h3>
+              <div class="project-mini-grid">
+                <div class="project-mini">
+                  <h4>Flood governance networks</h4>
+                  <p>
+                    Analyzing cross-sector collaboration, coordination patterns, and governance gaps
+                    among organizations involved in flood risk management.
+                  </p>
+                </div>
+
+                <div class="project-mini">
+                  <h4>Stakeholder perceptions and cognitive maps</h4>
+                  <p>
+                    Studying how stakeholders understand flood drivers, impacts, vulnerability,
+                    uncertainty, and adaptation priorities.
+                  </p>
+                </div>
+
+                <div class="project-mini">
+                  <h4>Decision-support maps and tools</h4>
+                  <p>
+                    Translating model outputs, spatial indicators, and community insights into visual
+                    and practical tools for planning and adaptation.
+                  </p>
+                </div>
+              </div>
+
+              <div class="chip-row">
+                <span>Governance</span>
+                <span>Citizen science</span>
+                <span>Stakeholder perception</span>
+                <span>Decision support</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+
+      <div class="section muted">
+        <div class="container">
+          <div class="section-heading compact">
+            <p class="eyebrow">Coupled systems approach</p>
+            <h2>Why the three themes belong together</h2>
+            <p>
+              <span class="accent-water">Flood risk</span>, water sustainability, <span class="accent-systems">green infrastructure</span>, governance, and <span class="accent-community">community knowledge</span>
+              are treated as connected parts of a coupled urban hydrosystem. This framing helps the lab
+              study not only where risks occur, but also how infrastructure, behavior, institutions, and
+              decisions change those risks over time.
+            </p>
+          </div>
+
+          <div class="method-tags">
+            <span>Hydrologic modeling</span>
+            <span>Hydrodynamic modeling</span>
+            <span>GIS and spatial analysis</span>
+            <span>Remote sensing</span>
+            <span>Agent-based modeling</span>
+            <span>System dynamics</span>
+            <span>Network analysis</span>
+            <span>Fuzzy cognitive mapping</span>
+            <span>Survey analysis</span>
+            <span>Interviews</span>
+            <span>Citizen science</span>
+            <span>Decision-support tools</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="people" class="tab-panel" hidden>
+      <div class="page-header">
+        <div class="container">
+          <p class="eyebrow">People</p>
+          <h1>Lab members</h1>
+          <p>
+            The UHR Lab is building a research team focused on urban water systems, climate resilience,
+            infrastructure, environmental systems, and community-engaged research.
+          </p>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="container people-grid">
+
+          <article class="profile-card">
+            <div class="profile-photo placeholder">KA</div>
+            <div>
+              <h3>Koorosh Azizi, Ph.D.</h3>
+              <p class="role">Principal Investigator</p>
+              <p>
+                Assistant Professor, Department of Civil and Architectural Engineering,
+                Tennessee State University. Dr. Azizi is an interdisciplinary scholar whose research
+                focuses on the nexus of urban water and environmental systems, climate risk assessment,
+                coupled human-water-infrastructure systems, and sustainability-oriented planning.
+              </p>
+              <div class="link-row">
+                <a class="mini-link" href="https://www.tnstate.edu/cae/azizi.aspx" target="_blank" rel="noopener">TSU profile</a>
+                <a class="mini-link" href="https://scholar.google.com/citations?hl=en&user=MXlzhmcAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
+                <a class="mini-link" href="mailto:kazizi@tnstate.edu">Email</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="profile-card soft">
+            <div class="profile-photo small-placeholder">GR</div>
+            <div>
+              <h3>Graduate Researchers</h3>
+              <p>
+                Graduate student profiles will be added as the lab grows. Potential topics include urban
+                flooding, hydrology, stormwater, GIS, modeling, governance, and decision support.
+              </p>
+            </div>
+          </article>
+
+          <article class="profile-card soft">
+            <div class="profile-photo small-placeholder">UR</div>
+            <div>
+              <h3>Undergraduate Researchers</h3>
+              <p>
+                Undergraduate researchers can contribute to GIS mapping, data cleaning, literature synthesis,
+                visualization, survey analysis, coding support, and community-focused research.
+              </p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="publications" class="tab-panel" hidden>
+      <div class="page-header">
+        <div class="container">
+          <p class="eyebrow">Publications</p>
+          <h1>Selected publications</h1>
+          <p>
+            Selected work below emphasizes <span class="accent-water">urban flooding</span>, citizen science, water affordability,
+            environmental systems, <span class="accent-systems">green stormwater infrastructure</span>, and <span class="accent-community">flood governance</span>.
+            Optimization-related publications are not highlighted here.
+          </p>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="container publication-list">
+
+          <article class="publication-card">
+            <span class="pub-year">2026</span>
+            <div>
+              <h3>Flood exposure and household green stormwater infrastructure adoption</h3>
+              <p class="pub-meta">Environmental Research Communications</p>
+              <p>
+                Study of how flood exposure aligns with household GSI adoption using survey responses,
+                census data, parcel feasibility measures, and flood hazard maps.
+              </p>
+              <div class="link-row">
+                <a class="mini-link" href="https://www.researchgate.net/publication/400297532_Flood_exposure_and_household_green_stormwater_infrastructure_adoption" target="_blank" rel="noopener">View</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="publication-card">
+            <span class="pub-year">2025</span>
+            <div>
+              <h3>Integrating Perspectives: Multi-Sectoral Insights into U.S. Gulf Coast Flood Governance</h3>
+              <p class="pub-meta">International Journal of Disaster Risk Reduction</p>
+              <p>
+                Mixed-method analysis connecting stakeholder perspectives, flood governance design,
+                cross-sector dialogue, and local adaptive capacity.
+              </p>
+              <div class="link-row">
+                <a class="mini-link" href="https://www.sciencedirect.com/science/article/abs/pii/S2212420925004868" target="_blank" rel="noopener">View</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="publication-card">
+            <span class="pub-year">2025</span>
+            <div>
+              <h3>Balancing Effectiveness and Equity in Sustainable Water Conservation Programs</h3>
+              <p class="pub-meta">Journal of Water Resources Planning and Management</p>
+              <p>
+                Research on tradeoffs and synergies between effectiveness and equity in urban water
+                conservation policy.
+              </p>
+              <div class="link-row">
+                <a class="mini-link" href="https://ascelibrary.org/doi/abs/10.1061/JWRMD5.WRENG-6523" target="_blank" rel="noopener">View</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="publication-card">
+            <span class="pub-year">2024</span>
+            <div>
+              <h3>Equity implications of efficient water conservation programs</h3>
+              <p class="pub-meta">Environmental Research Letters</p>
+              <p>
+                Analysis of how water conservation strategies can create tradeoffs and synergies between
+                water savings, affordability, and equity.
+              </p>
+              <div class="link-row">
+                <a class="mini-link" href="https://doi.org/10.1088/1748-9326/ad691a" target="_blank" rel="noopener">DOI</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="publication-card">
+            <span class="pub-year">2024</span>
+            <div>
+              <h3>Identifying Conditions that Support the Provision of High-Quality and Affordable Urban Drinking Water in the U.S.</h3>
+              <p class="pub-meta">Journal of Water Resources Planning and Management</p>
+              <p>
+                Comparative case study analysis of large-scale U.S. urban drinking water systems and
+                the conditions associated with affordability and quality.
+              </p>
+              <div class="link-row">
+                <a class="mini-link" href="https://ascelibrary.org/doi/10.1061/JWRMD5.WRENG-6289" target="_blank" rel="noopener">View</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="publication-card">
+            <span class="pub-year">2023</span>
+            <div>
+              <h3>A Citizen Science Approach to the Characterisation and Modelling of Urban Pluvial Flooding</h3>
+              <p class="pub-meta">Water Alternatives</p>
+              <p>
+                Framework for coupling qualitative and quantitative community observations with traditional
+                hydro-information and hydrologic-hydrodynamic modeling.
+              </p>
+              <div class="link-row">
+                <a class="mini-link" href="https://www.water-alternatives.org/index.php/alldoc/articles/vol16/v16issue1/688-a16-1-5/file" target="_blank" rel="noopener">PDF</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="publication-card">
+            <span class="pub-year">2022</span>
+            <div>
+              <h3>Integrated Community-Based Approaches to Urban Pluvial Flooding Research, Trends and Future Directions: A Review</h3>
+              <p class="pub-meta">Urban Climate</p>
+              <p>
+                Review of integrated approaches such as citizen science and socio-hydrology for connecting
+                human and environmental systems in urban pluvial flooding research.
+              </p>
+              <div class="link-row">
+                <a class="mini-link" href="https://www.canr.msu.edu/resources/Integrated-community-based-approaches-to-urban-pluvial-flooding-research-trends-and-future-directions-a-review" target="_blank" rel="noopener">View</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="publication-card">
+            <span class="pub-year">2021</span>
+            <div>
+              <h3>Urban pluvial flood risk assessment: Challenges and opportunities for improvement using a community-based approach</h3>
+              <p class="pub-meta">World Environmental and Water Resources Congress</p>
+              <p>
+                Community-based flood risk assessment using local survey data and hydrologic modeling
+                to identify limitations and opportunities in urban pluvial flood modeling.
+              </p>
+              <div class="link-row">
+                <a class="mini-link" href="https://digitalcommons.memphis.edu/facpubs/13328/" target="_blank" rel="noopener">View</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="tools" class="tab-panel" hidden>
+      <div class="page-header">
+        <div class="container">
+          <p class="eyebrow">Tools & Data</p>
+          <h1>Models, maps, datasets, and decision-support products</h1>
+          <p>
+            The lab develops computational and communication products that support research, planning,
+            adaptation, and <span class="accent-community">community-engaged decision-making</span>.
+          </p>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="container tool-grid">
+
+          <article class="tool-card">
+            <h3>Models</h3>
+            <p>
+              Hydrologic and hydrodynamic workflows, agent-based models for GSI adoption,
+              flood burden typologies, and governance network models.
+            </p>
+          </article>
+
+          <article class="tool-card">
+            <h3>Maps</h3>
+            <p>
+              Flood exposure maps, burden regime maps, infrastructure vulnerability indicators,
+              GSI adoption maps, and community-oriented spatial summaries.
+            </p>
+          </article>
+
+          <article class="tool-card">
+            <h3>Decision Support</h3>
+            <p>
+              Scenario tools, stakeholder summaries, interactive visualizations, and planning-oriented
+              outputs for agencies, communities, and researchers.
+            </p>
+          </article>
+
+        </div>
+      </div>
+
+      <div class="section muted">
+        <div class="container card-grid two">
+
+          <article class="plain-card">
+            <h3>Code and reproducible workflows</h3>
+            <p>
+              Future repositories may include Python, R, GIS, NetLogo, Google Earth Engine,
+              and visualization workflows connected to lab projects.
+            </p>
+          </article>
+
+          <article class="plain-card">
+            <h3>Data availability</h3>
+            <p>
+              Datasets and model products will be shared when possible, subject to privacy,
+              licensing, collaborator agreements, and community protection considerations.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="news" class="tab-panel" hidden>
+      <div class="page-header">
+        <div class="container">
+          <p class="eyebrow">News</p>
+          <h1>News</h1>
+          <p></p>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="container news-list">
+        </div>
+      </div>
+    </section>
+
+
+    <section id="join" class="tab-panel" hidden>
+      <div class="page-header">
+        <div class="container">
+          <p class="eyebrow">Join Us</p>
+          <h1>Opportunities for students and collaborators</h1>
+          <p>
+            The UHR Lab welcomes students interested in <span class="accent-water">hydrology, flooding, stormwater, GIS</span>,
+            data science, environmental justice, <span class="accent-systems">infrastructure resilience</span>, sustainability,
+            and <span class="accent-community">community-engaged research</span>.
+          </p>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="container join-panel">
+
+          <h2>Prospective students</h2>
+          <p>
+            Students interested in joining the lab should send a short email describing their research
+            interests, relevant skills, and how their goals connect to the lab’s work. A CV or résumé
+            is helpful.
+          </p>
+
+          <div class="join-columns">
+
+            <div>
+              <h3>Graduate students</h3>
+              <p>
+                Potential topics include urban flooding, GSI adoption, infrastructure resilience,
+                climate risk, socio-hydrology, water affordability, and flood governance.
+              </p>
+            </div>
+
+            <div>
+              <h3>Undergraduate students</h3>
+              <p>
+                Potential tasks include GIS mapping, data cleaning, literature review,
+                visualization, survey analysis, coding support, and project communication.
+              </p>
+            </div>
+
+          </div>
+
+          <div class="button-row">
+            <button class="button primary" data-open-tab="contact">Contact the Lab</button>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="section muted">
+        <div class="container card-grid three">
+
+          <article class="plain-card">
+            <h3>Skills we use</h3>
+            <p>
+              Hydrology, GIS, Python, R, data visualization, remote sensing, survey analysis,
+              network analysis, interviews, and technical writing.
+            </p>
+          </article>
+
+          <article class="plain-card">
+            <h3>Questions we ask</h3>
+            <p>
+              How do water, infrastructure, environment, communities, and institutions interact under
+              climate stress, and how can cities make better adaptation decisions?
+            </p>
+          </article>
+
+          <article class="plain-card">
+            <h3>Lab culture</h3>
+            <p>
+              We value curiosity, careful research, clear communication, respectful collaboration,
+              and work that connects technical analysis with real-world needs.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="tab-panel" hidden>
+      <div class="page-header">
+        <div class="container">
+          <p class="eyebrow">Contact</p>
+          <h1>Contact the UHR Lab</h1>
+          <p>
+            For student opportunities, research collaboration, or community partnership inquiries,
+            please include a short description of your interest.
+          </p>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="container contact-grid">
+
+          <article class="contact-card">
+            <h3>Lab</h3>
+            <p>Urban Hydrosystems & Resilience Lab</p>
+            <p>Tennessee State University</p>
+            <p>Department of Civil and Architectural Engineering</p>
+          </article>
+
+          <article class="contact-card">
+            <h3>Principal Investigator</h3>
+            <p>Koorosh Azizi, Ph.D.</p>
+            <p>Assistant Professor</p>
+            <p>Water Resources</p>
+          </article>
+
+          <article class="contact-card">
+            <h3>Contact</h3>
+            <p>Email: <a href="mailto:kazizi@tnstate.edu">kazizi@tnstate.edu</a></p>
+            <p>Office: ET242C</p>
+            <p>Phone: 615-963-1867</p>
+
+            <div class="link-row">
+              <a class="mini-link" href="mailto:kazizi@tnstate.edu">Email</a>
+              <a class="mini-link" href="https://www.tnstate.edu/cae/azizi.aspx" target="_blank" rel="noopener">TSU profile</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
 
       <div>
-        <p class="eyebrow">What we do</p>
-        <h2>Research for resilient and sustainable urban water futures.</h2>
+        <h3>Urban Hydrosystems & Resilience Lab</h3>
+        <p>Tennessee State University</p>
       </div>
-
-      <p>
-        Our work combines hydrologic modeling, geospatial analysis, agent-based modeling,
-        network analysis, and community-engaged research to understand how cities can better
-        prepare for flooding, infrastructure stress, environmental change, and uneven climate impacts.
-      </p>
-
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-
-      <div class="section-heading compact">
-        <p class="eyebrow">Core research pillars</p>
-        <h2>Three connected areas define the lab.</h2>
-      </div>
-
-      <div class="card-grid three">
-
-        <article class="research-card">
-          <div class="card-icon">≈</div>
-          <h3>Urban Flooding & Climate Risk</h3>
-          <p>
-            Flood exposure, stormwater systems, infrastructure performance,
-            and climate risk across urban communities.
-          </p>
-          <a class="text-link" href="research.html">Learn more</a>
-        </article>
-
-        <article class="research-card">
-          <div class="card-icon">◌</div>
-          <h3>Water, Environment & Sustainability</h3>
-          <p>
-            Urban hydrosystems, water affordability, conservation,
-            human-environment interactions, and sustainable planning.
-          </p>
-          <a class="text-link" href="research.html">Learn more</a>
-        </article>
-
-        <article class="research-card">
-          <div class="card-icon">◇</div>
-          <h3>Community & Decision Support</h3>
-          <p>
-            Citizen science, stakeholder perceptions, governance networks,
-            behavioral adoption, and adaptation decisions.
-          </p>
-          <a class="text-link" href="research.html">Learn more</a>
-        </article>
-
-      </div>
-
-    </div>
-  </section>
-
-  <section class="section muted">
-    <div class="container callout-clean">
 
       <div>
-        <p class="eyebrow">Students and collaborators</p>
-        <h2>Building a lab around applied, community-relevant urban water research.</h2>
-        <p>
-          The UHR Lab welcomes students interested in hydrology, flooding, stormwater,
-          GIS, environmental systems, infrastructure resilience, equity, and decision support.
-        </p>
-      </div>
-
-      <div class="callout-actions">
-        <a class="button primary" href="join.html">Join the Lab</a>
-        <a class="button secondary" href="contact.html">Contact</a>
+        <p>Urban water, environmental, infrastructure, and community systems</p>
+        <p>Climate resilience and sustainable decision-making</p>
       </div>
 
     </div>
-  </section>
+  </footer>
 
-</main>
+  <script>
+    const tabButtons = document.querySelectorAll(".tab-button");
+    const tabPanels = document.querySelectorAll(".tab-panel");
+    const tabOpeners = document.querySelectorAll("[data-open-tab]");
 
-<footer class="footer">
-  <div class="container footer-grid">
-    <div>
-      <h3>Azizi Urban Hydrosystems & Resilience Lab</h3>
-      <p>Tennessee State University</p>
-    </div>
+    function openTab(tabName) {
+      tabButtons.forEach(button => {
+        const isActive = button.dataset.tab === tabName;
+        button.classList.toggle("active", isActive);
+        button.setAttribute("aria-selected", isActive ? "true" : "false");
+      });
 
-    <div>
-      <p>Urban water, environmental, infrastructure, and community systems</p>
-      <p>Climate resilience and sustainable decision-making</p>
-    </div>
-  </div>
-</footer>
+      tabPanels.forEach(panel => {
+        const isActive = panel.id === tabName;
+        panel.hidden = !isActive;
+      });
+
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    tabButtons.forEach(button => {
+      button.addEventListener("click", () => openTab(button.dataset.tab));
+    });
+
+    tabOpeners.forEach(opener => {
+      opener.addEventListener("click", event => {
+        event.preventDefault();
+        openTab(opener.dataset.openTab);
+      });
+    });
+  </script>
 
 </body>
 </html>
